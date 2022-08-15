@@ -1,0 +1,17 @@
+.account-element-wrapper {
+    display: flex;
+    border: 1px solid #f5f4f0;
+    align-items: center;
+    padding: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+.account-element-wrapper img {
+    width: 70px;
+    height: 70px;
+}
+
+.account-element-wrapper p {
+    padding-left: 1em;
+    font-size: 20px;
+}

@@ -1,0 +1,33 @@
+.alcoholic-list-element-wrapper {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    text-align: center;
+    line-height: normal;
+    padding-left: 2em;
+    padding-bottom: 2em;
+}
+
+.alcoholic-element-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.alcoholic-element-wrapper {
+    width: 300px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid #f5f4f0;
+}
+
+
+.alcoholic-element-wrapper img {
+    max-height: 200px;
+    width: 200px;
+    height: auto;
+}
+
+.alcoholic-element-info div {
+    font-size: 25px;
+}
+

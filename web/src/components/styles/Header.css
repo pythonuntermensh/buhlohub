@@ -1,0 +1,58 @@
+.header-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 170px;
+    position: absolute;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(167, 167, 167);
+    z-index: 1;
+}
+
+.header-wrapper a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-wrapper h1 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.header-icon {
+    justify-content: start;
+}
+
+.header-login {
+    margin-left: auto;
+    padding-right: 1.5em;
+}
+
+.header-login a {
+    text-decoration: underline 0.1em white;
+    transition: text-decoration-color 250em;
+}
+
+.header-login a:hover {
+    text-decoration-color: inherit;
+}
+
+.header-login a:visited {
+    color: inherit;
+}
+
+.account-and-exit-wrapper {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .header-wrapper h1 {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+

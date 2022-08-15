@@ -1,0 +1,59 @@
+.userpage-wrapper {
+    position: relative;
+    text-align: center;
+    width: 80%;
+}
+
+.userpage-main-content-wrapper {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.change-avatar-form {
+    font-size: 20px;
+    padding-top: 1.5em;
+    max-width: 500px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.change-avatar-form input {
+    width: 97%;
+    margin-top: 0.5em;
+}
+
+.change-avatar-form button {
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.userpage-main-info-wrapper {
+    margin-top: 1em;
+    width: 300px;
+    height: 100%;
+    text-align: center;
+    line-height: normal;
+    padding: 0 2em 1em 2em;
+    border: 1px solid #f5f4f0;
+}
+
+.userpage-main-info-wrapper div {
+    padding-top: 1em;
+    font-size: 20px;
+}
+
+.userpage-main-info-wrapper img {
+    width: 300px;
+    height: auto;
+}
+
+.products-wrapper {
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .products-wrapper{
+        padding-left: 2.5em;
+    }
+}
+

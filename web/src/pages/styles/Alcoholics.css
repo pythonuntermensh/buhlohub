@@ -1,0 +1,11 @@
+.alcoholics-wrapper {
+    position: relative;
+    text-align: justify; 
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .alcoholics-elements-wrapper {
+        padding-left: 0;
+    }
+}

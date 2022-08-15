@@ -1,0 +1,11 @@
+.catalog-wrapper {
+    position: relative;
+    text-align: justify;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .products-wrapper{
+        padding-left: 1.5em;
+    }
+}
