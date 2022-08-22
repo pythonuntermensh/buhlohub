@@ -13,7 +13,7 @@ const Products = () => {
     if (error) return <p>Error!</p>;
     return (
         <div className="catalog-wrapper">
-            <p>Лучшее бухло</p>
+            <p>The Best Alcohol</p>
             <ul className="products-wrapper">
                 {data.drinkFeed.drinks.map(drink => (
                     <AlcoholElement 
@@ -26,7 +26,6 @@ const Products = () => {
                 ))}
             </ul>
         </div>
-        
     );
 };
 

@@ -26,7 +26,7 @@ const UserForm = props => {
             }}>
                 {props.typeForm === 'signup' && (
                     <React.Fragment>
-                        <label htmlFor="username">Имя:</label>
+                        <label htmlFor="username">Name:</label>
                         <input
                             required
                             type="text"
@@ -46,7 +46,7 @@ const UserForm = props => {
                     placeholder="email"
                     onChange={onChange}
                 />
-                <label htmlFor="username">Пароль:</label>
+                <label htmlFor="username">Password:</label>
                 <input
                     required
                     type="password"
@@ -55,7 +55,7 @@ const UserForm = props => {
                     placeholder="password"
                     onChange={onChange}
                 />
-                <Button text="Подтвердить" />
+                <Button text="Submit" />
             </form>
         </div>
     );

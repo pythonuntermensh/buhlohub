@@ -10,8 +10,8 @@ const AlcoholElement = props => {
                 <img height="150" width="150" src={props.src} alt="img" className="alcohol-element-img"/>
                 <div className="alcohol-element-info">
                     <div className="alcohol-element-name">{props.name}</div>
-                    <div className="alcohol-element-proof">{"Крепкость: " + props.proof + "°"}</div>
-                    <div className="alcohol-element-cost">{"Цена: " + props.cost + "$"}</div>
+                    <div className="alcohol-element-proof">{"proof: " + props.proof + "°"}</div>
+                    <div className="alcohol-element-cost">{"cost: " + props.cost + "$"}</div>
                 </div>
             </Link>
         </li>

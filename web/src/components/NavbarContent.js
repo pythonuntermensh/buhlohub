@@ -1,16 +1,16 @@
 export const NavbarContent = [
     {
-        title: 'Главная',
+        title: 'Home',
         path: '/',
         cName: 'navbar-text'
     },
     {
-        title: 'Каталог',
+        title: 'Catalog',
         path: '/products',
         cName: 'navbar-text'
     },
     {
-        title: 'Алкоголики',
+        title: 'Alcoholics',
         path: '/alcoholics',
         cName: 'navbar-text'
     }

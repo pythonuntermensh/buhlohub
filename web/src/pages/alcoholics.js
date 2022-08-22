@@ -13,7 +13,7 @@ const Alcoholics = () => {
     if (error) return <p>Error!</p>;
     return (
         <div className="alcoholics-wrapper">
-            <p>Топ алкоголиков</p>
+            <p>Top Alcoholics</p>
             <ul className="alcoholics-elements-wrapper">
                 {data.users.map(user => (
                     <AlcoholicElement 

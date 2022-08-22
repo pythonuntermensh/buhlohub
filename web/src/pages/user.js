@@ -37,14 +37,14 @@ const UserPage = props => {
 
     if (loading || myLoading) return <p>Loading...</p>;
     if (error) <p>Error! User not found. </p>;
-
+    if (data.user === null) return <p>User not found.</p>;
     return (
         <div className="userpage-wrapper">
             <div className="userpage-main-content-wrapper">
                 <div className="userpage-main-info-wrapper">
                     <p>{data.user.username}</p>
                     <img src={data.user.avatar} alt="avatar" />
-                    <div>Статей: {data.user.reviewsCount}</div>
+                    <div>Review: {data.user.reviewsCount}</div>
                 </div>
                 {data.user.id === myData.me.id && (
                     <form className="change-avatar-form" 
@@ -57,21 +57,21 @@ const UserPage = props => {
                             });
                             refreshPage();
                     }}>
-                        <label htmlFor="src">Смена аватарки:</label>
+                        <label htmlFor="src">Avatar Change:</label>
                         <input
                             required
                             type="text"
                             id="src"
                             name="src"
-                            placeholder="Ссылка на картинку"
+                            placeholder="IMAGE URL"
                             onChange={onChange}
                         />
-                        <Button text="Подтвердить" />
+                        <Button text="Submit" />
                     </form>
                 )}
                 
             </div>
-            <p>Опубликованные напитки:</p>
+            <p>Published alcohol:</p>
             <ul className="products-wrapper">
                 {data.user.drinks.map(drink => (
                     <AlcoholElement 

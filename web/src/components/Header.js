@@ -23,14 +23,14 @@ const Header = props => {
                                 localStorage.removeItem('token');
                                 props.history.push('/');
                             }}>
-                                Выход
+                                Logout
                         </Link>
                     </div>
                     
                 ) : (
                     <p>
-                        <Link to="/signin">Вход</Link> | {' '}
-                        <Link to="/signup">Регистрация</Link>
+                        <Link to="/signin">Sign In</Link> | {' '}
+                        <Link to="/signup">Sign Up</Link>
                     </p>
                 )}
             </div>

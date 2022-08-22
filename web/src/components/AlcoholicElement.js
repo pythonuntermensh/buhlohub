@@ -11,7 +11,7 @@ const AlcoholicElement = props => {
                     <img src={props.src} alt="alcoholic" />
                     <div className="alcoholic-element-info">
                         <div>{props.username}</div>
-                        <label>{props.reviewsCount} статей</label>
+                        <label>{props.reviewsCount} reviews</label>
                     </div>
                 </div>
             </Link>

@@ -8,7 +8,7 @@ import './styles/SignForm.css';
 
 const SignIn = props => {
     useEffect(() => {
-        document.title = 'Вход - Бухло.Маркет';
+        document.title = 'Sign In - BUHLO.MARKET';
     });
 
     const [signIn, { loading, error }] = useMutation(SIGNIN_USER, {
@@ -20,10 +20,10 @@ const SignIn = props => {
 
     return (
         <div className="signform-wrapper">
-            <p>Вход</p>
+            <p>Sign In</p>
             <UserForm typeForm='signin' action={signIn}/>
-            {loading && <p>Загрузка...</p>}
-            {error && <p>Ошибка при входе в аккаунт!</p>}
+            {loading && <p>Loading...</p>}
+            {error && <p>Error while signing in!</p>}
         </div>
     );
 };
