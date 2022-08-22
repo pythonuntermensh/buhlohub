@@ -5,9 +5,9 @@ import { GET_USER, GET_ME } from '../gql/query';
 import { CHANGE_AVATAR } from '../gql/mutation';
 
 import Button from '../components/Button';
-import AlcoholElement from '../components/AlcoholElement';
 
 import './styles/User.css';
+import AlcoholFeed from '../components/AlcoholFeed';
 
 const UserPage = props => {
 
@@ -73,15 +73,7 @@ const UserPage = props => {
             </div>
             <p>Published alcohol:</p>
             <ul className="products-wrapper">
-                {data.user.drinks.map(drink => (
-                    <AlcoholElement 
-                        key={drink.id} 
-                        src={drink.img}
-                        name={drink.name}
-                        cost={drink.averageCost}
-                        proof={drink.proof}
-                    />
-                ))}
+                <AlcoholFeed drinks={data.user.drinks}/>
             </ul>
         </div>
     );
