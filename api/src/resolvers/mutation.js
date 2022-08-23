@@ -61,6 +61,71 @@ module.exports = {
             return false;
         }
     },
+    newReview: async (parent, args, { models, user }) => {
+        if (!user) {
+            throw new AuthenticationError('You must be signed in to add a new review');
+        }
+
+        const drink = await models.Drink.findById(args.drink);
+        
+        if (!drink) {
+            throw new ForbiddenError('Drink was not found');
+        }
+
+        const model = await models.Review.create({
+            title: args.title,
+            text: args.text,
+            drink: mongoose.Types.ObjectId(args.drink),
+            author: mongoose.Types.ObjectId(user.id),
+        });
+
+        await models.User.findByIdAndUpdate(
+            user.id,
+            {
+                $push: {
+                    reviews: model.id
+                }
+            }
+        );
+        
+        await models.Drink.findByIdAndUpdate(
+            args.drink,
+            {
+                $push: {
+                    reviews: model.id
+                }
+            }
+        );
+
+        return model;
+    },
+    deleteReview: async (parent, args, { models, user }) => {
+        if (!user) {
+            throw new AuthenticationError('You must be signed in to delete a review');
+        }
+
+        const review = await models.Review.findById(args.id);
+        if (review && String(review.author) !== user.id) {
+            throw new ForbiddenError('You don\'t have permissions to delete a review');
+        }
+
+        try {
+            await models.Review.findOneAndRemove({ _id: args.id });
+
+            await models.User.findByIdAndUpdate(
+                user.id,
+                {
+                    $pull: {
+                        reviews: args.id
+                    }
+                }
+            );
+
+            return true;
+        } catch (err) {
+            return false;
+        }
+    },
     changeAvatar: async (parent, args, { models, user }) => {
         if (!user) {
             throw new AuthenticationError('You must be signed in to change your avatar!');

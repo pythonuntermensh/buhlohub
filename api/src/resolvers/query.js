@@ -36,6 +36,43 @@ module.exports = {
         };
 
     },
+    reviews: async (parent, args, { models }) => {
+        return await models.Review.find().limit(100);
+    },
+    review: async (parent, args, { models }) => {
+        return await models.Review.findById(args.id);
+    },
+    reviewFeed: async (parent, { cursor }, { models }) => {
+        const limit = 12;
+        let hasNextPage = false;
+        let cursorQuery = {};
+
+        if (cursor) {
+            cursorQuery = { _id: { $lt: cursor } } ;
+        }
+
+        let reviews = await models.Review.find(cursorQuery)
+            .sort({ _id: -1 })
+            .limit(limit + 1);
+
+        if (reviews.length > limit) {
+            hasNextPage = true;
+            reviews = reviews.slice(0, -1);
+        }
+
+        if (reviews.length < 1) {
+            throw new Error('No reviews found');
+        } 
+
+        const newCursor = reviews[reviews.length - 1]._id;
+
+        return {
+            reviews,
+            cursor: newCursor,
+            hasNextPage
+        };
+
+    },
     user: async (parent, args, { models }) => {
         return await models.User.findOne({ username: args.username });
     },

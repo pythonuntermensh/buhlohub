@@ -28,6 +28,12 @@ const UserSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Drink',
             }
+        ],
+        reviews: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Review',
+            }
         ]
     },
     {

@@ -10,6 +10,7 @@ module.exports = gql`
         averageCost: Int!
         proof: Int!
         author: User!
+        reviews: [Review!]!
         createdAt: DateTime!
         updatedAt: DateTime!
     }
@@ -21,6 +22,23 @@ module.exports = gql`
         avatar: String
         reviewsCount: Int
         drinks: [Drink!]!
+        reviews: [Review!]!
+    }
+
+    type Review {
+        id: ID!
+        title: String!
+        text: String!
+        author: User!
+        drink: Drink!
+        createdAt: DateTime!
+        updatedAt: DateTime!
+    }
+
+    type ReviewFeed {
+        reviews: [Review!]!
+        cursor: String!
+        hasNextPage: Boolean!
     }
 
     type DrinkFeed {
@@ -33,6 +51,9 @@ module.exports = gql`
         drinks: [Drink!]!
         drink(id: ID!): Drink!
         drinkFeed(cursor: String): DrinkFeed
+        reviews: [Review!]!
+        review(id: ID!): Review!
+        reviewFeed(cursor: String): ReviewFeed
         user(username: String!): User
         users: [User!]!
         me: User!
@@ -41,6 +62,8 @@ module.exports = gql`
     type Mutation {
         newDrink(name: String!, img: String!, averageCost: Int!, proof: Int!): Drink
         deleteDrink(id: ID!): Boolean!
+        newReview(title: String!, text: String!, drink: ID!): Review
+        deleteReview(id: ID!): Boolean!
         changeAvatar(src: String!): Boolean!
         signUp(username: String!, email: String!, password: String!): String!
         signIn(username: String, email: String, password: String!): String!
