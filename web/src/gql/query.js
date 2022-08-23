@@ -91,6 +91,46 @@ const GET_MY_DRINKS = gql`
   }
 `;
 
+const GET_REVIEWS = gql`
+  query reviewFeed($cursor: String) {
+    reviewFeed(cursor: $cursor) {
+      cursor
+      hasNextPage
+      reviews {
+        id
+        createdAt
+        title
+        author {
+          username
+        }
+        drink {
+          name
+          img
+        }
+      }
+    }
+  }
+`;
+
+const GET_REVIEW = gql`
+  query review($id: ID!) {
+    review(id: $id) {
+      id
+      createdAt
+      title
+      text
+      author {
+        username
+        avatar
+      }
+      drink {
+        name
+        img
+      }
+    }
+  }
+`;
+
 const GET_ME = gql`
   query me {
     me {
@@ -116,6 +156,8 @@ export {
   GET_DRINKS,
   GET_DRINK,
   GET_MY_DRINKS,
+  GET_REVIEWS,
+  GET_REVIEW,
   GET_ME,
   IS_LOGGED_IN
 };

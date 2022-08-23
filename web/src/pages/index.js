@@ -10,6 +10,7 @@ import SignIn from './signin';
 import Alcoholics from './alcoholics';
 import User from './user';
 import Developing from './developing';
+import Review from './review';
 
 const Pages = () => {
     return (
@@ -21,8 +22,9 @@ const Pages = () => {
                 <Route path='/signup' component={SignUp} />
                 <Route path='/signin' component={SignIn} />
                 <Route path="/user/:username" component={User} />
-                <Route path="/product/:id" component={Developing} />
+                <Route path="/product/:drink" component={Developing} />
                 <Route path="/product/undefined" component={Developing} />
+                <Route path="/review/:review" component={Review} />
             </Layout>
         </BrowserRouter>
     );
