@@ -19,7 +19,7 @@ const ReviewPage = props => {
             <p>{data.review.title}</p>
             <img src={data.review.drink.img} />
             <p>{data.review.text}</p>
-            <p>by {data.review.author.username}</p>
+            <p>by <a href={"/user/" + data.review.author.username}>{data.review.author.username}</a></p>
         </div>
     )
 }
