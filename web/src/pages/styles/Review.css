@@ -1,0 +1,9 @@
+.review-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.review-wrapper img{
+    display: flex;
+    justify-self: center;
+}

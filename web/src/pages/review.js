@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client';
 
 import { GET_REVIEW } from '../gql/query';
 
+import './styles/Review.css';
+
 
 const ReviewPage = props => {
     let id = props.match.params.review;
@@ -13,12 +15,12 @@ const ReviewPage = props => {
     if (error) <p>Error! User not found. </p>;
 
     return (
-        <>
+        <div className="review-wrapper">
             <p>{data.review.title}</p>
             <img src={data.review.drink.img} />
             <p>{data.review.text}</p>
             <p>by {data.review.author.username}</p>
-        </>
+        </div>
     )
 }
 
