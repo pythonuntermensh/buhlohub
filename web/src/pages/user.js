@@ -38,6 +38,8 @@ const UserPage = props => {
     if (loading || myLoading) return <p>Loading...</p>;
     if (error) <p>Error! User not found. </p>;
     if (data.user === null) return <p>User not found.</p>;
+    console.log(data);
+    console.log(myData);
     return (
         <div className="userpage-wrapper">
             <div className="userpage-main-content-wrapper">
@@ -46,7 +48,7 @@ const UserPage = props => {
                     <img src={data.user.avatar} alt="avatar" />
                     <div>Review: {data.user.reviewsCount}</div>
                 </div>
-                {data.user.id === myData.me.id && (
+                {myData && (
                     <form className="change-avatar-form" 
                         onSubmit={event => {
                             event.preventDefault();
